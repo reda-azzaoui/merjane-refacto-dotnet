@@ -1,0 +1,12 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/Merjane.Inventory.Api/Merjane.Inventory.Api.csproj" />
+    <Project Path="src/Merjane.Inventory.Application/Merjane.Inventory.Application.csproj" />
+    <Project Path="src/Merjane.Inventory.Domain/Merjane.Inventory.Domain.csproj" />
+    <Project Path="src/Merjane.Inventory.Infrastructure/Merjane.Inventory.Infrastructure.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/Merjane.Inventory.Api.IntegrationTests/Merjane.Inventory.Api.IntegrationTests.csproj" />
+    <Project Path="tests/Merjane.Inventory.Domain.UnitTests/Merjane.Inventory.Domain.UnitTests.csproj" />
+  </Folder>
+</Solution>
