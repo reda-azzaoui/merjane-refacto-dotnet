@@ -65,15 +65,3 @@ Pour un produit `SEASONAL` non vendu, dans cet ordre :
 1. Si la date de réapprovisionnement dépasse la fin de saison : stock retiré, produit notifié indisponible.
 2. Si la saison n'a pas commencé : produit notifié indisponible, stock conservé.
 3. Sinon : délai annoncé.
-
-## Comportements historiques conservés
-
-Le refactoring ne devait introduire aucune régression. Ces comportements du code d'origine sont donc conservés et verrouillés par des tests, même s'ils semblent contestables au regard du cahier des charges. Les corriger relève d'une décision métier :
-
-* Un produit saisonnier en stock n'est pas vendu le premier jour de sa saison (un délai est annoncé), et perd son stock le dernier jour.
-* Un produit saisonnier perd son stock après sa saison, ou avant celle-ci si le délai de réapprovisionnement la dépasse.
-* Un produit saisonnier en rupture sans délai annonce un délai de 0 jour.
-* Un produit expirable en rupture reçoit une notification d'expiration, même s'il n'a pas expiré.
-* Un produit expirable dont la date est aujourd'hui après minuit reste vendu, même si l'heure est passée.
-* Traiter deux fois la même commande décrémente deux fois le stock.
-* Des commandes simultanées peuvent perdre des mises à jour de stock : aucun contrôle de concurrence n'existe.
